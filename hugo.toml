@@ -1,0 +1,26 @@
+baseURL = 'https://tajinder.cv/'
+languageCode = 'en-us'
+title = 'Tajinder Singh - CV'
+enableRobotsTXT = true
+enableEmoji = true
+
+theme = 'taji-cv'
+disableKinds = ['page', 'section', 'taxonomy', 'term', 'RSS', 'sitemap']
+
+[params]
+enableMetaTags = true
+colorLight = '#fff'
+colorDark = '#1a1a2e'
+colorPageBackground = '#d6e4f0'
+colorPrimary = '#1e3a5f'
+colorSecondary = '#4a90d9'
+colorIconPrimary = '#fff'
+colorIconBackground = '#2980b9'
+colorRightColumnBackground = '#e8f1f8'
+colorRightColumnHeadingText = '#1e3a5f'
+colorRightColumnBodyText = '#34495e'
+colorRightColumnIconPrimary = '#fff'
+colorRightColumnIconBackground = '#3498db'
+pages = 1
+swapColumns = false
+footerNote = "2026 © Tajinder Singh"

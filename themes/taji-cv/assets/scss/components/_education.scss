@@ -1,0 +1,17 @@
+.education {
+    &__item {
+        @include avoid-break;
+        margin-bottom: 1.5rem;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    &__details {
+        list-style: square inside;
+        margin-left: 1rem;
+    }
+}
