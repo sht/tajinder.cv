@@ -1,12 +1,16 @@
 # CV Website
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/45aaefe6-1f12-41fd-a9f6-c8aaf14f18fc/deploy-status)](https://app.netlify.com/projects/tajindercv/deploys)
+
 A modern, responsive CV website built with [Hugo](https://gohugo.io/), a fast and flexible static site generator.
 
 ## 🎯 Overview
 
 This is a personal CV/portfolio website for Tajinder Singh, designed to showcase professional experience, skills, and accomplishments. The site is hosted on Netlify and deployed automatically from this repository.
 
-**Live Site:** https://tajinder.cv/
+## Demo
+
+- [tajinder.cv](https://tajinder.cv)
 
 ## 🛠️ Tech Stack
 
