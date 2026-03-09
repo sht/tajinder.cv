@@ -8,8 +8,3 @@
 [context.production.environment]
   HUGO_ENV = "production"
 
-[[redirects]]
-  from = "https://tajinder.cv/*"
-  to = "https://www.tajinder.cv/:splat"
-  status = 301
-  force = true
