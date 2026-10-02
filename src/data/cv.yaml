@@ -37,7 +37,7 @@ experience:
     location: Berlin, Germany
     roles:
       - title: Head of Product Security
-        dates: Jun 2023 – Feb 2026
+        dates: Jun 2023 – Present
         points:
           - Defined product security strategy across regional platforms and led engineering security initiatives.
           - Established a Security Champions program and reported security posture and remediation trends to senior leadership.
@@ -86,11 +86,14 @@ recognition:
   - title: Google Vulnerability Rewards Program
     note: Bug bounty recognition, 2023
 education:
-  - degree: M.Sc. Computer Science
+  - degree: Master's in Computer Science and Engineering (M.Tech)
     institution: Lovely Professional University, India
-    dates: 2012 – 2014
+    dates: 2013 – 2014
     note: Thesis on Android app forensics
-  - degree: B.Sc. Computer Science
+  - degree: Bachelor's in Computer Science and Engineering (B.Tech)
     institution: Lovely Professional University, India
-    dates: 2008 – 2012
+    dates: 2010 – 2013
+  - degree: Diploma in Computer Science and Engineering
+    institution: Lovely Professional University, India
+    dates: 2007 – 2010
 languages: English · Hindi · Punjabi · German
