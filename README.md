@@ -2,134 +2,69 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/45aaefe6-1f12-41fd-a9f6-c8aaf14f18fc/deploy-status)](https://app.netlify.com/projects/tajindercv/deploys)
 
-A modern, responsive CV website built with [Hugo](https://gohugo.io/), a fast and flexible static site generator.
-
-## 🎯 Overview
-
-This is a personal CV/portfolio website for Tajinder Singh, designed to showcase professional experience, skills, and accomplishments. The site is hosted on Netlify and deployed automatically from this repository.
+Personal CV website for Tajinder Singh, built with [Astro](https://astro.build/) and a single YAML content file. It is fully static: no server, database, analytics, or runtime API calls.
 
 ## Demo
 
 - [tajinder.cv](https://tajinder.cv)
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-- **Static Site Generator:** Hugo v0.157.0
+- **Framework:** Astro 7, TypeScript, CSS
+- **Content:** `src/data/cv.yaml`
+- **Fonts:** Lato and Source Sans 3, self-hosted via `@fontsource`
 - **Hosting:** Netlify
-- **Theme:** Custom `taji-cv` theme
-- **Language:** English (en-us)
 
-## 📁 Project Structure
+## Project Structure
 
-```
+```text
 .
-├── hugo.toml          # Hugo configuration
-├── netlify.toml       # Netlify deployment configuration
-├── themes/            # Hugo themes directory
-│   └── taji-cv/       # Custom CV theme
-├── content/           # Page content (disabled via disableKinds)
-├── data/              # Data files for the CV
-├── static/            # Static assets (CSS, images, etc.)
-├── resources/         # Hugo resource cache
-├── public/            # Build output (generated)
-└── .gitignore         # Git ignore rules
+├── astro.config.mjs               # Astro configuration (site URL, static output)
+├── netlify.toml                   # Netlify build configuration
+├── public/favicon.svg             # Static assets, copied as-is
+└── src/
+    ├── components/ExperienceEntry.astro
+    ├── data/cv.yaml               # All CV content
+    ├── pages/index.astro          # Page layout and meta tags
+    ├── styles/global.css          # Responsive and print styles
+    └── types.ts                   # Types for cv.yaml
 ```
 
-## 🚀 Getting Started
+## Local Development
 
-### Prerequisites
+Requires Node.js 22.12 or later.
 
-- Hugo v0.157.0 or later
-- Git
-
-### Local Development
-
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   cd website
-   ```
-
-2. Start the Hugo development server:
-   ```bash
-   hugo server
-   ```
-
-3. Open your browser to `http://localhost:1313`
-
-The site will automatically reload when you make changes to content or templates.
-
-## 🎨 Customization
-
-### Color Scheme
-
-The website uses a customizable color palette defined in `hugo.toml`:
-
-- **Primary Color:** #1e3a5f (dark blue)
-- **Secondary Color:** #4a90d9 (medium blue)
-- **Page Background:** #d6e4f0 (light blue)
-- **Right Column Background:** #e8f1f8 (lighter blue)
-
-Modify these values in the `[params]` section of `hugo.toml` to change the site's appearance.
-
-### Configuration
-
-Key settings in `hugo.toml`:
-
-- `baseURL` - The base URL of your site
-- `title` - Site title
-- `swapColumns` - Toggle between two-column layouts
-- `footerNote` - Footer copyright text
-
-## 🔧 Build & Deployment
-
-### Local Build
-
-Generate the static site:
 ```bash
-hugo --minify
+npm ci
+npm run dev
 ```
 
-Output is generated in the `public/` directory.
+Open the local URL printed by Astro (default `http://localhost:4321`).
 
-### Automatic Deployment
+Production build:
 
-The site is configured to automatically deploy to Netlify on every push to the main branch. Netlify will:
+```bash
+npm run check     # type and template checks
+npm run build     # output in dist/
+npm run preview   # serve dist/ locally
+```
 
-1. Install Hugo v0.157.0
-2. Run `hugo --minify`
-3. Publish the `public/` directory
+## Updating the CV
 
-**Netlify Redirects:**
-- Requests to `https://tajinder.cv/*` are redirected to `https://www.tajinder.cv/:splat` (301 permanent redirect)
+Edit `src/data/cv.yaml`. It holds the biography, contact links, selected work, experience, skills, recognition, and education. Layout changes go in `src/pages/index.astro` and styling in `src/styles/global.css`.
 
-## 📝 Content Management
+The canonical and Open Graph URLs are set to `https://tajinder.cv/` in `src/pages/index.astro`. Update them if the domain changes.
 
-Content is managed through:
+The "Print / save PDF" button opens the browser print dialog, the print styles in `global.css` control the PDF layout.
 
-- **Data files:** Store CV data in `data/` directory
-- **Static files:** Store images and assets in `static/` directory
-- **Theme templates:** Customize HTML in `themes/taji-cv/`
+## Deployment
 
-Standard Hugo page/section/taxonomy generation is disabled (`disableKinds`), allowing for a completely custom layout.
+Netlify deploys automatically on every push to `master`. Pull requests get a deploy preview. Netlify will:
 
-## 🔒 Features
+1. Use Node.js 22
+2. Run `npm run build`
+3. Publish the `dist/` directory
 
-- ✅ SEO optimized with meta tags
-- ✅ Emoji support enabled
-- ✅ Robots.txt auto-generation
-- ✅ Responsive design
-- ✅ Dark/light color scheme support
-
-## 📦 Dependencies
-
-- Hugo v0.157.0 (managed by Netlify)
-- No external package dependencies
-
-## 📄 License
-
-See LICENSE file for details.
-
-## 👤 Author
+## Author
 
 Tajinder Singh - [tajinder.cv](https://tajinder.cv/)
