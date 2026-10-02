@@ -51,11 +51,11 @@ npm run preview   # serve dist/ locally
 
 ## Updating the CV
 
-Edit `src/data/cv.yaml`. It holds the biography, contact links, selected work, experience, skills, recognition, and education. Layout changes go in `src/pages/index.astro` and styling in `src/styles/global.css`.
+Edit `src/data/cv.yaml`. It holds the biography, contact links, selected work, experience, skills, recognition, education, and languages. Layout changes go in `src/pages/index.astro` and styling in `src/styles/global.css`.
 
 The canonical and Open Graph URLs are set to `https://tajinder.cv/` in `src/pages/index.astro`. Update them if the domain changes.
 
-The "Print / save PDF" button opens the browser print dialog, the print styles in `global.css` control the PDF layout.
+The "Print / save PDF" button opens the browser print dialog. The print styles in `global.css` control the PDF layout.
 
 ## Deployment
 
