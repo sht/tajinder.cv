@@ -11,13 +11,6 @@ contact:
   linkedin: https://www.linkedin.com/in/ts5/
   github: https://github.com/sht
 selected_work:
-  - eyebrow: Security automation
-    title: AI-assisted pull request review
-    description: Designed the pull request review and feedback phase of an internal AI-assisted security testing system, putting security feedback directly into the development workflow.
-    details:
-      - GitHub Actions
-      - Pull request diffs
-      - Developer feedback
   - eyebrow: AI application security
     title: LLM threat modelling and testing
     description: Developed threat models and prompt injection testing for LLM-integrated features, and wrote internal guidance for secure use of generative AI.
