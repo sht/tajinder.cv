@@ -1,0 +1,96 @@
+# Edit this file to update all text rendered by the site.
+# Verify the current employment dates before publishing.
+name: Tajinder Singh
+role: Product Security / Staff Security Engineering
+location: Berlin, Germany
+intro: I build security into products and engineering workflows.
+summary: 12+ years across fintech, SaaS and global e-commerce, spanning secure architecture, application security, DevSecOps and AI security.
+about: I work with engineering teams to make security part of the way products are designed and shipped. My experience ranges from hands-on API and application security to building secure development programs and leading product security strategy.
+contact:
+  email: tajinder.singh@sek4.com
+  linkedin: https://www.linkedin.com/in/ts5/
+  github: https://github.com/sht
+selected_work:
+  - eyebrow: Security automation
+    title: AI-assisted pull request review
+    description: Designed the pull request review and feedback phase of an internal AI-assisted security testing system, putting security feedback directly into the development workflow.
+    details:
+      - GitHub Actions
+      - Pull request diffs
+      - Developer feedback
+  - eyebrow: AI application security
+    title: LLM threat modelling and testing
+    description: Developed threat models and prompt injection testing for LLM-integrated features, and wrote internal guidance for secure use of generative AI.
+    details:
+      - Threat modelling
+      - Prompt injection
+      - Security guidance
+  - eyebrow: Secure development
+    title: Security in delivery pipelines
+    description: Integrated SAST, DAST and SCA into CI/CD pipelines, alongside architecture reviews and risk-based remediation with product and engineering teams.
+    details:
+      - SAST / DAST / SCA
+      - CI/CD
+      - Architecture reviews
+experience:
+  - company: Global Fashion Group
+    location: Berlin, Germany
+    roles:
+      - title: Head of Product Security
+        dates: Jun 2023 – Feb 2026
+        points:
+          - Defined product security strategy across regional platforms and led engineering security initiatives.
+          - Established a Security Champions program and reported security posture and remediation trends to senior leadership.
+          - Developed threat models and prompt injection testing for LLM-integrated features, and authored internal AI security guidelines.
+          - Evaluated application, container and network security tools for the engineering environment.
+      - title: Senior Security Engineer
+        dates: Nov 2019 – Jun 2023
+        points:
+          - Integrated SAST, DAST and SCA into CI/CD pipelines across the application portfolio.
+          - Conducted threat modelling and secure architecture reviews with product teams.
+          - Implemented WAF rules and routed security logs into the SIEM for detection and visibility.
+  - company: PayTM
+    location: Noida, India
+    roles:
+      - title: Senior Security Engineer
+        dates: Aug 2016 – Sep 2019
+        points:
+          - Worked with product teams on API security testing, secure authentication and payment security.
+          - Integrated static and dynamic analysis into CI/CD pipelines and helped establish secure development practices.
+          - Conducted red team exercises against payment infrastructure.
+  - company: Freshworks
+    location: Chennai, India
+    roles:
+      - title: Security Engineer
+        dates: Feb 2015 – Aug 2016
+        points:
+          - Assessed the SaaS platform for security vulnerabilities and worked with engineering on remediation.
+          - Supported secure development practices and security awareness initiatives.
+  - company: NT Global
+    location: Kigali, Rwanda
+    roles:
+      - title: Cyber Security Trainer
+        dates: Jul 2014 – Oct 2014
+        points:
+          - Delivered hands-on security workshops and awareness training for enterprise clients in East Africa.
+skills:
+  - category: Product security
+    items: Threat modelling · Secure architecture · API security · Secure SDLC · Design reviews
+  - category: Security engineering
+    items: CI/CD security · SAST · DAST · SCA · WAF · Security automation
+  - category: AI security
+    items: LLM threat modelling · Prompt injection testing · AI application guardrails
+  - category: Platforms
+    items: AWS · Docker · Cloud security · SIEM
+recognition:
+  - title: Google Vulnerability Rewards Program
+    note: Bug bounty recognition, 2023
+education:
+  - degree: M.Sc. Computer Science
+    institution: Lovely Professional University, India
+    dates: 2012 – 2014
+    note: Thesis on Android app forensics
+  - degree: B.Sc. Computer Science
+    institution: Lovely Professional University, India
+    dates: 2008 – 2012
+languages: English · Hindi · Punjabi · German

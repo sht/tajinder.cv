@@ -1,0 +1,124 @@
+---
+import { parse } from 'yaml';
+import cvSource from '../data/cv.yaml?raw';
+import ExperienceEntry from '../components/ExperienceEntry.astro';
+import type { CV } from '../types';
+import '../styles/global.css';
+import '@fontsource/lato/400.css';
+import '@fontsource/lato/700.css';
+import '@fontsource/source-sans-3/400.css';
+import '@fontsource/source-sans-3/600.css';
+import '@fontsource/source-sans-3/700.css';
+
+const cv = parse(cvSource) as CV;
+const pageTitle = `${cv.name} | Product Security`;
+const description = `${cv.name} — ${cv.summary}`;
+const sections = [
+  { id: 'about', label: 'About' },
+  { id: 'work', label: 'Selected work' },
+  { id: 'experience', label: 'Experience' },
+  { id: 'expertise', label: 'Expertise' },
+  { id: 'recognition', label: 'Recognition' },
+  { id: 'education', label: 'Education' },
+];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#253147" />
+    <meta name="description" content={description} />
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content="https://tajinder.cv/" />
+    <link rel="canonical" href="https://tajinder.cv/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="wordmark" href="#top" aria-label="Tajinder Singh, back to top"><span class="mark">TS<span>.</span></span><span class="wordmark-label">TAJINDER SINGH <span class="wordmark-divider">/</span> CV</span></a>
+        <nav class="topnav" aria-label="Main navigation">
+          <a href="#work">Work</a><a href="#experience">Experience</a><a href="#expertise">Expertise</a>
+          <a class="nav-contact" href={`mailto:${cv.contact.email}`}>Get in touch <span aria-hidden="true">↗</span></a>
+        </nav>
+      </header>
+
+      <main id="main">
+        <section class="hero" id="top" aria-labelledby="name">
+          <div class="hero-kicker"><span class="rule"></span><span>PRODUCT SECURITY <span class="kicker-dot">·</span> BERLIN, GERMANY</span></div>
+          <h1 id="name">{cv.name.split(' ')[0]} <span>{cv.name.split(' ').slice(1).join(' ')}</span><span class="period">.</span></h1>
+          <p class="hero-role">{cv.role}</p>
+          <p class="hero-intro">{cv.intro}</p>
+          <p class="hero-summary">{cv.summary}</p>
+          <div class="hero-actions" aria-label="Contact and CV actions">
+            <a class="action-primary" href={`mailto:${cv.contact.email}`}>Email me <span aria-hidden="true">↗</span></a>
+            <a href={cv.contact.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+            <a href={cv.contact.github} target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+            <button type="button" id="print-cv">Print / save PDF <span aria-hidden="true">↗</span></button>
+          </div>
+        </section>
+
+        <div class="content-grid">
+          <aside class="sidebar" aria-label="Page sections">
+            <div class="sidebar-inner">
+              <p class="sidebar-label">CONTENTS</p>
+              <ol>{sections.map((section, i) => <li><a href={`#${section.id}`}><span>{String(i + 1).padStart(2, '0')}</span>{section.label}</a></li>)}</ol>
+              <div class="sidebar-note"><span class="note-line"></span><span>Security that ships<br />with the product.</span></div>
+            </div>
+          </aside>
+
+          <div class="content">
+            <section class="section about" id="about" aria-labelledby="about-heading">
+              <div class="section-heading"><span class="section-number">01 / ABOUT</span><h2 id="about-heading">Security, from design to delivery<span class="heading-period">.</span></h2></div>
+              <p>{cv.about}</p>
+            </section>
+
+            <section class="section" id="work" aria-labelledby="work-heading">
+              <div class="section-heading"><span class="section-number">02 / SELECTED WORK</span><h2 id="work-heading">What I work on<span class="heading-period">.</span></h2></div>
+              <div class="work-grid">
+                {cv.selected_work.map((item, i) => (
+                  <article class:list={['work-card', { featured: i === 0 }]}>
+                    <div class="work-top"><span class="work-index">0{i + 1}</span><span class="work-eyebrow">{item.eyebrow}</span></div>
+                    <h3>{item.title}</h3>
+                    <p>{item.description}</p>
+                    <ul class="tags" aria-label="Areas covered">{item.details.map((detail) => <li>{detail}</li>)}</ul>
+                  </article>
+                ))}
+              </div>
+            </section>
+
+            <section class="section" id="experience" aria-labelledby="experience-heading">
+              <div class="section-heading"><span class="section-number">03 / EXPERIENCE</span><h2 id="experience-heading">Where I’ve worked<span class="heading-period">.</span></h2></div>
+              <div class="experience-list">{cv.experience.map((employer) => <ExperienceEntry employer={employer} />)}</div>
+            </section>
+
+            <section class="section" id="expertise" aria-labelledby="expertise-heading">
+              <div class="section-heading"><span class="section-number">04 / EXPERTISE</span><h2 id="expertise-heading">The toolkit<span class="heading-period">.</span></h2></div>
+              <div class="skills-grid">{cv.skills.map((group) => <div class="skill-group"><h3>{group.category}</h3><p>{group.items}</p></div>)}</div>
+            </section>
+
+            <div class="closing-grid">
+              <section class="section compact" id="recognition" aria-labelledby="recognition-heading">
+                <div class="section-heading"><span class="section-number">05 / RECOGNITION</span><h2 id="recognition-heading">Recognition<span class="heading-period">.</span></h2></div>
+                {cv.recognition.map((item) => <div class="small-entry"><h3>{item.title}</h3><p>{item.note}</p></div>)}
+              </section>
+              <section class="section compact" id="education" aria-labelledby="education-heading">
+                <div class="section-heading"><span class="section-number">06 / EDUCATION</span><h2 id="education-heading">Education<span class="heading-period">.</span></h2></div>
+                {cv.education.map((item) => <div class="small-entry"><h3>{item.degree}</h3><p>{item.institution} <span class="muted">· {item.dates}</span></p>{item.note && <p class="small-note">{item.note}</p>}</div>)}
+              </section>
+            </div>
+            <div class="languages"><span>LANGUAGES</span><p>{cv.languages}</p></div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer"><div><strong>{cv.name}</strong><span>Product security · Berlin</span></div><a href={`mailto:${cv.contact.email}`}>{cv.contact.email} <span aria-hidden="true">↗</span></a><span class="copyright">© {new Date().getFullYear()}</span></footer>
+    </div>
+    <script>document.querySelector<HTMLButtonElement>('#print-cv')?.addEventListener('click', () => window.print());</script>
+  </body>
+</html>
