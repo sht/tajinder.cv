@@ -1,0 +1,25 @@
+{
+  "name": "tajinder-cv",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@fontsource/lato": "^5.2.8",
+    "@fontsource/source-sans-3": "^5.2.8",
+    "astro": "^7.3.5",
+    "yaml": "^2.8.1"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.6",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}
