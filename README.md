@@ -55,14 +55,14 @@ Edit `src/data/cv.yaml`. It holds the biography, contact links, selected work, e
 
 The canonical and Open Graph URLs are set to `https://tajinder.cv/` in `src/pages/index.astro`. Update them if the domain changes.
 
-The "Print / save PDF" button opens the browser print dialog. The print styles in `global.css` control the PDF layout.
+`npm run build` also generates `dist/tajinder-singh-cv.pdf` from the built page using Playwright (`scripts/build-pdf.mjs`), and the "Download PDF" link points to it. The print styles in `global.css` control the PDF layout. The PDF only exists after a build, so the link returns 404 under `npm run dev`; use `npm run build && npm run preview` to test it.
 
 ## Deployment
 
 Netlify deploys automatically on every push to `master`. Pull requests get a deploy preview. Netlify will:
 
 1. Use Node.js 22
-2. Run `npm run build`
+2. Install Chromium for Playwright (`postinstall`) and run `npm run build`
 3. Publish the `dist/` directory
 
 ## Author
