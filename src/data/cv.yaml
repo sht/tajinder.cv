@@ -25,6 +25,13 @@ selected_work:
       - SAST / DAST / SCA
       - CI/CD
       - Architecture reviews
+  - eyebrow: Supply chain security
+    title: Dependency inventory for CVE triage
+    description: Built an automated dependency inventory across hundreds of repositories using GitHub's SBOM API, cutting supply chain CVE triage from hours of manual searching to minutes.
+    details:
+      - SBOM
+      - Supply chain
+      - CLI & static search site
 experience:
   - company: Global Fashion Group
     location: Berlin, Germany
